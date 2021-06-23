@@ -14,7 +14,7 @@ public class StatusTimer {
                 "Think of me like Yoda but instead of being small and green I wear suits and I'm awesome. | *help",
                 "Suits are full of joy. They’re the sartorial equivalent of a baby’s smile. | *help",
                 "ALL HAIL BEERCULES! | *help", "Andiamo fratello, non Mastroianni tutti i funyuns | *help",
-                "Where's the poop, Robin? | *help", "Thank you, Linus | *help", "Come again for big judge? | *help",
+                "Where's the poop, Robin? | *help", "Thank you, Linus | *help", "Come again for big fudge? | *help",
                 "NOBODY ASKED YOU PATRICE! | *help", "El ganso con la riñonera! | *help" };
         Random random = new Random();
         String status = statuses[random.nextInt(statuses.length)];

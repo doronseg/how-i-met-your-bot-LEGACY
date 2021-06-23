@@ -6,8 +6,12 @@ import org.slf4j.LoggerFactory;
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.oscar.commandManager.CommandManager;
 import me.nerdoron.oscar.commands.fun.EightBall;
+import me.nerdoron.oscar.commands.useful.AboutCommand;
+import me.nerdoron.oscar.commands.useful.DonateCommand;
 import me.nerdoron.oscar.commands.useful.HelpButtons;
 import me.nerdoron.oscar.commands.useful.HelpCommand;
+import me.nerdoron.oscar.commands.useful.PingCommand;
+import me.nerdoron.oscar.commands.useful.UptimeCommand;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -59,7 +63,10 @@ public class Main {
     public static void registration(JDA jda) {
         try {
             new CommandManager(jda, prefix).registerCommand(new HelpCommand(), "help", "?")
-                    .registerCommand(new EightBall(), "eightball", "8ball", "ball");
+                    .registerCommand(new EightBall(), "eightball", "8ball", "ball")
+                    .registerCommand(new AboutCommand(), "about").registerCommand(new DonateCommand(), "donate")
+                    .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong");
+
             jda.addEventListener(new HelpButtons());
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);

@@ -14,7 +14,8 @@ public class HelpCommand extends Command {
                 String userid = event.getAuthor().getId();
                 event.getChannel().sendMessageEmbeds(HelpEmbeds.HelpMainMenu)
                                 .setActionRow(Button.secondary(userid + ":HelpMain", "🔮 Main Menu"),
-                                                Button.secondary(userid + ":HelpFun", "🦩 Fun Commands"))
+                                                Button.secondary(userid + ":HelpFun", "🦩 Fun Commands"),
+                                                Button.secondary(userid + ":HelpUseful", "🛠️ Useful Commands"))
                                 .queue();
         }
 
