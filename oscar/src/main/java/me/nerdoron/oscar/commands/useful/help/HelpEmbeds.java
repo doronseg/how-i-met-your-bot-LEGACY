@@ -1,4 +1,4 @@
-package me.nerdoron.oscar.commands.useful;
+package me.nerdoron.oscar.commands.useful.help;
 
 import me.nerdoron.oscar.Global;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -23,7 +23,8 @@ public class HelpEmbeds {
                                         + "\n\n`*uptime` - Shows the bot's uptime"
                                         + "\n\n`*ping` - Shows the bot's ping\n*Aliases:* `*pong`"
                                         + "\n\n`*about` - Shows information about the bot."
-                                        + "\n\n`*donate` - Gives you the link to donate to the author.")
+                                        + "\n\n`*donate` - Gives you the link to donate to the author."
+                                        + "\n\n`*afk [reason]* - Sets you as AFK")
                         .setFooter("Oscar Stinson Bot | Developed by nerdoron / Judge Fudge",
                                         "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
                         .setColor(Global.embedColor).build();

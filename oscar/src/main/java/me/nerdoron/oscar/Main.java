@@ -8,10 +8,12 @@ import me.nerdoron.oscar.commandManager.CommandManager;
 import me.nerdoron.oscar.commands.fun.EightBall;
 import me.nerdoron.oscar.commands.useful.AboutCommand;
 import me.nerdoron.oscar.commands.useful.DonateCommand;
-import me.nerdoron.oscar.commands.useful.HelpButtons;
-import me.nerdoron.oscar.commands.useful.HelpCommand;
 import me.nerdoron.oscar.commands.useful.PingCommand;
 import me.nerdoron.oscar.commands.useful.UptimeCommand;
+import me.nerdoron.oscar.commands.useful.afksystem.AFKCommand;
+import me.nerdoron.oscar.commands.useful.afksystem.AFKMessageEvent;
+import me.nerdoron.oscar.commands.useful.help.HelpButtons;
+import me.nerdoron.oscar.commands.useful.help.HelpCommand;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -65,9 +67,12 @@ public class Main {
             new CommandManager(jda, prefix).registerCommand(new HelpCommand(), "help", "?")
                     .registerCommand(new EightBall(), "eightball", "8ball", "ball")
                     .registerCommand(new AboutCommand(), "about").registerCommand(new DonateCommand(), "donate")
-                    .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong");
+                    .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong")
+                    .registerCommand(new AFKCommand(), "afk");
 
             jda.addEventListener(new HelpButtons());
+            jda.addEventListener(new AFKMessageEvent());
+
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);
         }

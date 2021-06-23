@@ -6,3 +6,4 @@ oscar/target/test-classes/
 oscar/target/classes/
 
 *.jar
+*.db

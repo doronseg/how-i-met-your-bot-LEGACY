@@ -1,4 +1,4 @@
-package me.nerdoron.oscar.commands.useful;
+package me.nerdoron.oscar.commands.useful.help;
 
 import java.util.concurrent.TimeUnit;
 
