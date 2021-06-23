@@ -2,4 +2,5 @@
 
 .vscode/
 .settings/
-target/
+oscar/target/test-classes/
+oscar/target/classes/
