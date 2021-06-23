@@ -35,7 +35,7 @@ public class Main {
 
     private static void setupEnv() {
         try {
-            Dotenv dotenv = Dotenv.configure().directory(Global.dotEnvLocation).load();
+            Dotenv dotenv = Dotenv.load();
             logger.info("Stage 1 complete");
             logger.info("Stage 2: bot login");
             login(dotenv);

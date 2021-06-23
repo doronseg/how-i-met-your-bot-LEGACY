@@ -12,7 +12,7 @@ public abstract class Command {
 
     public void executeGlobal(MessageReceivedEvent event, String cmd, Object[] args) {
         final Logger logger = LoggerFactory.getLogger(Command.class);
-        Dotenv dotenv = Dotenv.configure().directory(Global.dotEnvLocation).load();
+        Dotenv dotenv = Dotenv.load();
         try {
             execute(event, args, logger, dotenv);
         } catch (Exception ex) {
