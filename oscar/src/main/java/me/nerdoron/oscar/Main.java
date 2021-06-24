@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.oscar.commandManager.CommandManager;
 import me.nerdoron.oscar.commands.fun.EightBall;
+import me.nerdoron.oscar.commands.fun.Joke;
 import me.nerdoron.oscar.commands.useful.AboutCommand;
 import me.nerdoron.oscar.commands.useful.DonateCommand;
 import me.nerdoron.oscar.commands.useful.PingCommand;
@@ -68,7 +69,7 @@ public class Main {
                     .registerCommand(new EightBall(), "eightball", "8ball", "ball")
                     .registerCommand(new AboutCommand(), "about").registerCommand(new DonateCommand(), "donate")
                     .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong")
-                    .registerCommand(new AFKCommand(), "afk");
+                    .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke");
 
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
