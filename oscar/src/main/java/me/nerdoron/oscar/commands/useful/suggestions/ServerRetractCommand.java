@@ -43,7 +43,7 @@ public class ServerRetractCommand extends Command {
                 return;
             }
 
-            TextChannel askstaff = event.getGuild().getTextChannelById("850624610830778401");
+            TextChannel askstaff = event.getGuild().getTextChannelById("857560927134285824");
             MessageEmbed eb = new EmbedBuilder().setTitle("[RETRACTED]")
                     .setDescription("[suggestions retracted by author]")
                     .setFooter("Oscar Stinson Bot | Developed by nerdoron / Judge Fudge",

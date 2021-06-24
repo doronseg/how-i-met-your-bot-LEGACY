@@ -33,7 +33,7 @@ public class ServerSuggestionAnswerCommand extends Command {
 
         String SQL1 = "select * from serversug where SID=?";
 
-        TextChannel suggest = event.getGuild().getTextChannelById("850624610830778401");
+        TextChannel suggest = event.getGuild().getTextChannelById("857560927134285824");
 
         try {
             Connection con = Database.connect();
@@ -46,9 +46,10 @@ public class ServerSuggestionAnswerCommand extends Command {
             ps1.close();
 
             if (answeredAlready == 1) {
-                event.getChannel().sendMessage(":x: Question already answered!").queue();
+                event.getChannel().sendMessage(":x: Suggestion already answered!").queue();
                 return;
             }
+
             String SQL2 = "replace into serversug(SID, SAUTHOR, SANSWER) values(?,?,?)";
             PreparedStatement ps2 = con.prepareStatement(SQL2);
             ps2.setString(1, messageId);

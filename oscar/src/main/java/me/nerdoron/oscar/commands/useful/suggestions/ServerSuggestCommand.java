@@ -24,7 +24,7 @@ public class ServerSuggestCommand extends Command {
             return;
         }
 
-        TextChannel serversuggestion = event.getGuild().getTextChannelById("850624610830778401");
+        TextChannel serversuggestion = event.getGuild().getTextChannelById("857560927134285824");
         MessageEmbed suggestNoId = new EmbedBuilder()
                 .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
                 .setDescription("Getting suggestion...").addField("Author ID", event.getAuthor().getId(), true)
