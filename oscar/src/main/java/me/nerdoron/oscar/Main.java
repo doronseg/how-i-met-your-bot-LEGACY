@@ -15,6 +15,8 @@ import me.nerdoron.oscar.commands.useful.afksystem.AFKCommand;
 import me.nerdoron.oscar.commands.useful.afksystem.AFKMessageEvent;
 import me.nerdoron.oscar.commands.useful.help.HelpButtons;
 import me.nerdoron.oscar.commands.useful.help.HelpCommand;
+import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestCommand;
+import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestionAnswerCommand;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -69,7 +71,9 @@ public class Main {
                     .registerCommand(new EightBall(), "eightball", "8ball", "ball")
                     .registerCommand(new AboutCommand(), "about").registerCommand(new DonateCommand(), "donate")
                     .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong")
-                    .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke");
+                    .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke")
+                    .registerCommand(new ServerSuggestCommand(), "serversuggest", "ssuggestion", "ssuggest")
+                    .registerCommand(new ServerSuggestionAnswerCommand(), "sanswer");
 
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
