@@ -20,6 +20,9 @@ public class AFKMessageEvent extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
+        if (event.getMember() == null) {
+            logger.info("member = null");
+        }
         String uid = event.getMember().getId();
         boolean afk = AFKChecks.CheckAFK(uid);
         Connection con = Database.connect();

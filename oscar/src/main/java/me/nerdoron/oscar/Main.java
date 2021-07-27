@@ -17,6 +17,7 @@ import me.nerdoron.oscar.commands.useful.help.HelpButtons;
 import me.nerdoron.oscar.commands.useful.help.HelpCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestionAnswerCommand;
+import me.nerdoron.oscar.modules.StarboardEventHandler;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -74,9 +75,9 @@ public class Main {
                     .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke")
                     .registerCommand(new ServerSuggestCommand(), "serversuggest", "ssuggestion", "ssuggest")
                     .registerCommand(new ServerSuggestionAnswerCommand(), "sanswer");
-
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
+            jda.addEventListener(new StarboardEventHandler());
 
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);
