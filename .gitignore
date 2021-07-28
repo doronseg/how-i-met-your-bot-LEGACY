@@ -7,3 +7,4 @@ oscar/target/classes/
 
 *.jar
 *.db
+db.db-journal

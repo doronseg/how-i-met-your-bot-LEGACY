@@ -10,7 +10,7 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class ServerSuggestCommand extends Command {
+public class VideoSuggestCommand extends Command {
     public static EmbedBuilder suggestionYesId;
 
     @Override
@@ -36,7 +36,7 @@ public class ServerSuggestCommand extends Command {
                 suggestion = suggestion + (i == 0 ? "" : " ") + args[i].toString();
             }
             event.getChannel().sendMessage(
-                    ":white_check_mark: Your suggestion was sent!\n**Please remember that sending troll suggestions will result in a strike.")
+                    ":white_check_mark: Your suggestion was sent to the staff team!\n**Please remember that sending troll suggestions will result in a strike.")
                     .queue();
             suggestionYesId = new EmbedBuilder()
                     .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
@@ -48,7 +48,6 @@ public class ServerSuggestCommand extends Command {
             message.editMessageEmbeds(finalSuggestion).queue();
             message.addReaction("✅").queue();
             message.addReaction("❌").queue();
-
         });
     }
 

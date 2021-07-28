@@ -26,7 +26,10 @@ public class HelpEmbeds {
                                         + "\n\n`*about` - Shows information about the bot."
                                         + "\n\n`*donate` - Gives you the link to donate to the author."
                                         + "\n\n`*afk [reason]` - Sets you as AFK"
-                                        + "\n\n`*ssuggest [suggestion]` - Send a server suggestion\n*Aliases:* `*serversuggest`, `*ssuggestion`")
+                                        + "\n\n`*ssuggest [suggestion]` - Send a server suggestion\n*Aliases:* `*serversuggest`, `*ssuggestion`"
+                                        + "\n\n`*vsuggest [suggestion]` - Send a video suggestion\n*Aliases:* `*videosuggest`, `*vsuggestion`"
+                                        + "\n\n`*psuggest [suggestion]` - Send a poll suggestion\n*Aliases:* `*pollsuggest`, `*psuggestion`"
+                                        + "\n\n`*bsuggest [suggestion]` - Send a bot suggestion\n*Aliases:* `*botsuggest`, `*bsuggestion`")
                         .setFooter("Oscar Stinson Bot | Developed by nerdoron / Judge Fudge",
                                         "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
                         .setColor(Global.embedColor).build();

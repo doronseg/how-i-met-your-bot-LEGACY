@@ -15,8 +15,10 @@ import me.nerdoron.oscar.commands.useful.afksystem.AFKCommand;
 import me.nerdoron.oscar.commands.useful.afksystem.AFKMessageEvent;
 import me.nerdoron.oscar.commands.useful.help.HelpButtons;
 import me.nerdoron.oscar.commands.useful.help.HelpCommand;
+import me.nerdoron.oscar.commands.useful.suggestions.BotSuggestCommand;
+import me.nerdoron.oscar.commands.useful.suggestions.PollSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestCommand;
-import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestionAnswerCommand;
+import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.StarboardEventHandler;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
@@ -74,7 +76,10 @@ public class Main {
                     .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong")
                     .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke")
                     .registerCommand(new ServerSuggestCommand(), "serversuggest", "ssuggestion", "ssuggest")
-                    .registerCommand(new ServerSuggestionAnswerCommand(), "sanswer");
+                    .registerCommand(new VideoSuggestCommand(), "videosuggest", "vsuggestion", "vsuggest")
+                    .registerCommand(new PollSuggestCommand(), "pollsuggest", "psuggestion", "psuggest")
+                    .registerCommand(new BotSuggestCommand(), "botsuggest", "bsuggestion", "bsuggest");
+                    
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
             jda.addEventListener(new StarboardEventHandler());
