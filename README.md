@@ -22,8 +22,6 @@ As of right now, we have 2 SQLITE databases, if you want to contribute and make 
 ```
 #AFK System Table
 CREATE TABLE "afk" ("UID" TEXT UNIQUE, "REASON" TEXT)
-#Server Suggestion Table
-CREATE TABLE "serversug" ("SID"	TEXT UNIQUE, "SAUTHOR" TEXT, "SANSWER" TEXT)
 ```
 
 ## License
