@@ -20,7 +20,7 @@ public class PollSuggestCommand extends Command {
             return;
         }
 
-        TextChannel serversuggestion = event.getGuild().getTextChannelById("857560927134285824");
+        TextChannel serversuggestion = event.getGuild().getTextChannelById("869854335562027018");
         MessageEmbed suggestNoId = new EmbedBuilder()
                 .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
                 .setDescription("Getting suggestion...").addField("Author ID", event.getAuthor().getId(), true)
