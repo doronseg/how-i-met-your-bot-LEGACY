@@ -24,12 +24,12 @@ public class ChainChannelHandler extends ListenerAdapter {
         String uid = event.getMember().getId();
         String messageContent = event.getMessage().getContentDisplay();
 
-        event.getChannel().getHistory().retrievePast(1).queue(messages -> {
-            if (!(messages.get(0).getContentDisplay().equals(messageContent))) {
+        event.getChannel().getHistory().retrievePast(2).map(messages -> messages.get(1)).queue(message -> {
+            if (!(message.getContentDisplay().equals(messageContent))) {
                 event.getMessage().delete().queue();
                 return;
             }
-            if (messages.get(0).getAuthor().getId().equals(uid)) {
+            if (message.getAuthor().getId().equals(uid)) {
                 event.getMessage().delete().queue();
                 return;
             }
