@@ -3,6 +3,7 @@ package me.nerdoron.oscar.modules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -11,14 +12,14 @@ public class ChainChannelHandler extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getMember() == null) {
+        if (event.getMember() == null)
             return;
-        }
         if (!(event.getChannel().getId().equals("880421327494873098")))
             return;
-        if (event.getMember().getUser().isBot() || event.getMember().getId().equals("221204198287605770")) {
+        if (event.getMember().getUser().isBot())
             return;
-        }
+        if (event.getMember().hasPermission(Permission.MESSAGE_MANAGE))
+            return;
 
         String uid = event.getMember().getId();
         String messageContent = event.getMessage().getContentDisplay();
