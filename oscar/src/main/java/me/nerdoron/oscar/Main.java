@@ -16,10 +16,12 @@ import me.nerdoron.oscar.commands.useful.afksystem.AFKMessageEvent;
 import me.nerdoron.oscar.commands.useful.help.HelpButtons;
 import me.nerdoron.oscar.commands.useful.help.HelpCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.BotSuggestCommand;
+import me.nerdoron.oscar.commands.useful.suggestions.ChainSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.PollSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.ChainChannelHandler;
+import me.nerdoron.oscar.modules.ChainEditing;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -78,11 +80,13 @@ public class Main {
                     .registerCommand(new ServerSuggestCommand(), "serversuggest", "ssuggestion", "ssuggest")
                     .registerCommand(new VideoSuggestCommand(), "videosuggest", "vsuggestion", "vsuggest")
                     .registerCommand(new PollSuggestCommand(), "pollsuggest", "psuggestion", "psuggest")
+                    .registerCommand(new ChainSuggestCommand(), "chainsuggest", "csuggestion", "csuggest")
                     .registerCommand(new BotSuggestCommand(), "botsuggest", "bsuggestion", "bsuggest");
 
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
             jda.addEventListener(new ChainChannelHandler());
+            jda.addEventListener(new ChainEditing());
 
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);

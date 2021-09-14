@@ -16,8 +16,10 @@ public class ChainChannelHandler extends ListenerAdapter {
             return;
         if (!(event.getChannel().getId().equals("880421327494873098")))
             return;
-        if (event.getMember().getUser().isBot())
+        if (event.getMember().getUser().isBot()) {
+            event.getMessage().delete().queue();
             return;
+        }
         if (event.getMember().hasPermission(Permission.MESSAGE_MANAGE))
             return;
 
