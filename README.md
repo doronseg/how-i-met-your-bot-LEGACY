@@ -18,7 +18,7 @@ DB=jdbc:jdbc:sqlite:db.db
 ```
 
 ### Database
-As of right now, we have 2 SQLITE databases, if you want to contribute and make an update that includes a new database, make sure to create an issue first.
+As of right now, we have 1 SQLITE databases, if you want to contribute and make an update that includes a new database, make sure to create an issue first.
 ```
 #AFK System Table
 CREATE TABLE "afk" ("UID" TEXT UNIQUE, "REASON" TEXT)
