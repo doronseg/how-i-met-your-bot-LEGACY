@@ -10,6 +10,7 @@ import me.nerdoron.oscar.commands.fun.Joke;
 import me.nerdoron.oscar.commands.useful.AboutCommand;
 import me.nerdoron.oscar.commands.useful.DonateCommand;
 import me.nerdoron.oscar.commands.useful.PingCommand;
+import me.nerdoron.oscar.commands.useful.ReviveChat;
 import me.nerdoron.oscar.commands.useful.UptimeCommand;
 import me.nerdoron.oscar.commands.useful.afksystem.AFKCommand;
 import me.nerdoron.oscar.commands.useful.afksystem.AFKMessageEvent;
@@ -78,6 +79,7 @@ public class Main {
                     .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong")
                     .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke")
                     .registerCommand(new ServerSuggestCommand(), "serversuggest", "ssuggestion", "ssuggest")
+                    .registerCommand(new ReviveChat(), "revive")
                     .registerCommand(new VideoSuggestCommand(), "videosuggest", "vsuggestion", "vsuggest")
                     .registerCommand(new PollSuggestCommand(), "pollsuggest", "psuggestion", "psuggest")
                     .registerCommand(new ChainSuggestCommand(), "chainsuggest", "csuggestion", "csuggest")
