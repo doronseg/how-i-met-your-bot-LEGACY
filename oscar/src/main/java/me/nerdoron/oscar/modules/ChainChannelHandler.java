@@ -35,6 +35,11 @@ public class ChainChannelHandler extends ListenerAdapter {
                 event.getMessage().delete().queue();
                 return;
             }
+
+            if (message.getStickers().size() > 0) {
+                event.getMessage().delete().queue();
+                return;
+            }
         });
 
     }
