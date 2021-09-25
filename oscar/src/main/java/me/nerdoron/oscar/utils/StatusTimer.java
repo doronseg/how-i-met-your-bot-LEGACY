@@ -19,11 +19,6 @@ public class StatusTimer {
         Random random = new Random();
         String status = statuses[random.nextInt(statuses.length)];
         api.getPresence().setActivity(Activity.playing(status));
-        new java.util.Timer().scheduleAtFixedRate(new java.util.TimerTask() {
-            @Override
-            public void run() {
-                api.getPresence().setActivity(Activity.playing(status));
-            }
-        }, 300000, 300000);
+
     }
 }
