@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.oscar.commandManager.CommandManager;
 import me.nerdoron.oscar.commands.fun.EightBall;
-import me.nerdoron.oscar.commands.fun.Joke;
 import me.nerdoron.oscar.commands.useful.AboutCommand;
 import me.nerdoron.oscar.commands.useful.DonateCommand;
 import me.nerdoron.oscar.commands.useful.PingCommand;
@@ -23,6 +22,8 @@ import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.ChainChannelHandler;
 import me.nerdoron.oscar.modules.ChainEditing;
+import me.nerdoron.oscar.modules.CountingChannelHandler;
+import me.nerdoron.oscar.modules.Blitz;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -77,7 +78,7 @@ public class Main {
                     .registerCommand(new EightBall(), "eightball", "8ball", "ball")
                     .registerCommand(new AboutCommand(), "about").registerCommand(new DonateCommand(), "donate")
                     .registerCommand(new UptimeCommand(), "uptime").registerCommand(new PingCommand(), "ping", "pong")
-                    .registerCommand(new AFKCommand(), "afk").registerCommand(new Joke(), "joke", "dadjoke")
+                    .registerCommand(new AFKCommand(), "afk")
                     .registerCommand(new ServerSuggestCommand(), "serversuggest", "ssuggestion", "ssuggest")
                     .registerCommand(new ReviveChat(), "revive")
                     .registerCommand(new VideoSuggestCommand(), "videosuggest", "vsuggestion", "vsuggest")
@@ -89,6 +90,10 @@ public class Main {
             jda.addEventListener(new AFKMessageEvent());
             jda.addEventListener(new ChainChannelHandler());
             jda.addEventListener(new ChainEditing());
+            jda.addEventListener(new Blitz());
+            jda.addEventListener(new CountingChannelHandler());
+
+            // ZitchDog.run();
 
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);
