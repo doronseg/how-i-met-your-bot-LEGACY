@@ -16,7 +16,7 @@ public class AboutCommand extends Command {
 
                 MessageEmbed aboutEmbed = new EmbedBuilder().setTitle("About").setDescription(
                                 "The Oscar Stinson Discord Bot is a discord bot designed for the Oscar [Stinson Discord Server](https://discord.gg/himym). Below you could find all details regarding the bot.")
-                                .addField("Library Version", "4.3.0_282", true)
+                                .addField("Library Version", "4.3.0_331", true)
                                 .addField("Developer", "nerdoron#6483", true)
                                 .addField("Ping", event.getJDA().getGatewayPing() + "ms.", true)
                                 .addField("Uptime", UptimeCommand.getUptime(), true)
@@ -25,7 +25,7 @@ public class AboutCommand extends Command {
                                                 "Running this bot isn't free, it costs about $3/month and it currently comes out of nerdoron's personal pocket. If you want to help the bot to continue running without issues, run `*donate`.",
                                                 false)
                                 .setColor(Global.embedColor)
-                                .setFooter("Oscar Stinson Bot | Developed by nerdoron / Judge Fudge",
+                                .setFooter("Oscar Stinson Bot | Developed by nerdoron",
                                                 "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
                                 .build();
 

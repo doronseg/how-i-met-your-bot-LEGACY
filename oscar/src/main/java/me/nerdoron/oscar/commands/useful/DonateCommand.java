@@ -15,7 +15,7 @@ public class DonateCommand extends Command {
     public void execute(MessageReceivedEvent event, Object[] args, Logger logger, Dotenv dotenv) {
         MessageEmbed donateEmbed = new EmbedBuilder().setTitle("Donate").setDescription(
                 "Running this bot isn't free, it costs about $3/month and it currently comes out of nerdoron's personal pocket. If you want to help the bot to continue running without issues, please consider [donating](https://paypal.me/segevf)")
-                .setFooter("Oscar Stinson Bot | Developed by nerdoron / Judge Fudge",
+                .setFooter("Oscar Stinson Bot | Developed by nerdoron",
                         "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
                 .setColor(Global.embedColor).build();
         event.getChannel().sendMessageEmbeds(donateEmbed).queue();

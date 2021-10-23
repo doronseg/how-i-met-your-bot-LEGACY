@@ -24,6 +24,8 @@ import me.nerdoron.oscar.modules.ChainChannelHandler;
 import me.nerdoron.oscar.modules.ChainEditing;
 import me.nerdoron.oscar.modules.CountingChannelHandler;
 import me.nerdoron.oscar.modules.LeaveJoin;
+import me.nerdoron.oscar.modules.ZitchDogTimer;
+import me.nerdoron.oscar.ticketsystem.TicketCreate;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -92,8 +94,9 @@ public class Main {
             jda.addEventListener(new ChainEditing());
             jda.addEventListener(new LeaveJoin());
             jda.addEventListener(new CountingChannelHandler());
+            jda.addEventListener(new TicketCreate());
 
-            // ZitchDog.run();
+            // ZitchDogTimer.run();
 
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);

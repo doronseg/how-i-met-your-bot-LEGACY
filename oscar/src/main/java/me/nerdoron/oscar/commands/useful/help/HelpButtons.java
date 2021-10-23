@@ -10,7 +10,11 @@ public class HelpButtons extends ListenerAdapter {
 
     @Override
     public void onButtonClick(ButtonClickEvent event) {
-        String[] id = event.getComponentId().split(":");
+        String ComponentId = event.getComponentId();
+        if (!ComponentId.contains(":"))
+            return;
+
+        String[] id = ComponentId.split(":");
         String authorId = id[0];
         String type = id[1];
         Message message = event.getMessage();
@@ -30,15 +34,15 @@ public class HelpButtons extends ListenerAdapter {
         event.deferEdit().queue();
 
         switch (type) {
-            case "HelpMain":
-                message.editMessageEmbeds(HelpEmbeds.HelpMainMenu).queue();
-                break;
-            case "HelpFun":
-                message.editMessageEmbeds(HelpEmbeds.HelpFunMenu).queue();
-                break;
-            case "HelpUseful":
-                message.editMessageEmbeds(HelpEmbeds.HelpUsefulMenu).queue();
-                break;
+        case "HelpMain":
+            message.editMessageEmbeds(HelpEmbeds.HelpMainMenu).queue();
+            break;
+        case "HelpFun":
+            message.editMessageEmbeds(HelpEmbeds.HelpFunMenu).queue();
+            break;
+        case "HelpUseful":
+            message.editMessageEmbeds(HelpEmbeds.HelpUsefulMenu).queue();
+            break;
 
         }
     }
