@@ -23,7 +23,7 @@ import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.ChainChannelHandler;
 import me.nerdoron.oscar.modules.ChainEditing;
 import me.nerdoron.oscar.modules.CountingChannelHandler;
-import me.nerdoron.oscar.modules.Blitz;
+import me.nerdoron.oscar.modules.LeaveJoin;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -90,7 +90,7 @@ public class Main {
             jda.addEventListener(new AFKMessageEvent());
             jda.addEventListener(new ChainChannelHandler());
             jda.addEventListener(new ChainEditing());
-            jda.addEventListener(new Blitz());
+            jda.addEventListener(new LeaveJoin());
             jda.addEventListener(new CountingChannelHandler());
 
             // ZitchDog.run();

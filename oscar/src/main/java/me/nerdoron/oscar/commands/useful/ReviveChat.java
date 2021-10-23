@@ -12,7 +12,7 @@ public class ReviveChat extends Command {
     @Override
     public void execute(MessageReceivedEvent event, Object[] args, Logger logger, Dotenv dotenv) {
         if (event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) {
-            event.getChannel().sendMessage("<@&888562459676409877>").queue();
+            event.getChannel().sendMessage("<@&900487372251213955>").queue();
             event.getChannel()
                     .sendMessage("https://tenor.com/view/googas-wet-wet-cat-dead-chat-dead-chat-xd-gif-20820186")
                     .queue();
