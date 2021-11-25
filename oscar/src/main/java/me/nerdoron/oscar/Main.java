@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.oscar.commandManager.CommandManager;
 import me.nerdoron.oscar.commands.fun.EightBall;
+import me.nerdoron.oscar.commands.fun.SayCommand;
 import me.nerdoron.oscar.commands.useful.AboutCommand;
 import me.nerdoron.oscar.commands.useful.DonateCommand;
 import me.nerdoron.oscar.commands.useful.PingCommand;
@@ -23,8 +24,9 @@ import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.ChainChannelHandler;
 import me.nerdoron.oscar.modules.ChainEditing;
 import me.nerdoron.oscar.modules.CountingChannelHandler;
+import me.nerdoron.oscar.modules.FriendsCringe;
 import me.nerdoron.oscar.modules.LeaveJoin;
-import me.nerdoron.oscar.modules.ZitchDogTimer;
+import me.nerdoron.oscar.ticketsystem.CloseTicketCommand;
 import me.nerdoron.oscar.ticketsystem.TicketCreate;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
@@ -86,7 +88,8 @@ public class Main {
                     .registerCommand(new VideoSuggestCommand(), "videosuggest", "vsuggestion", "vsuggest")
                     .registerCommand(new PollSuggestCommand(), "pollsuggest", "psuggestion", "psuggest")
                     .registerCommand(new ChainSuggestCommand(), "chainsuggest", "csuggestion", "csuggest")
-                    .registerCommand(new BotSuggestCommand(), "botsuggest", "bsuggestion", "bsuggest");
+                    .registerCommand(new BotSuggestCommand(), "botsuggest", "bsuggestion", "bsuggest")
+                    .registerCommand(new SayCommand(), "say").registerCommand(new CloseTicketCommand(), "close");
 
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
@@ -94,9 +97,10 @@ public class Main {
             jda.addEventListener(new ChainEditing());
             jda.addEventListener(new LeaveJoin());
             jda.addEventListener(new CountingChannelHandler());
+            jda.addEventListener(new FriendsCringe());
             jda.addEventListener(new TicketCreate());
 
-            // ZitchDogTimer.run();
+            // ZitchDogTimer.run(jda);
 
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);
