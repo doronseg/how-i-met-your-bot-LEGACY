@@ -14,7 +14,7 @@ You will also need to create your own bot, on thee [Discord Developer Portal](ht
 ```
 TOKEN=YOUR TOKEN GOES HERE
 
-DB=jdbc:jdbc:sqlite:db.db
+DB=jdbc:sqlite:db.db
 ```
 
 ### Database
