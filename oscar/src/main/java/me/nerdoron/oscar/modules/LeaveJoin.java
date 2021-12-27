@@ -19,6 +19,13 @@ public class LeaveJoin extends ListenerAdapter {
         TextChannel joinLeaves = event.getGuild().getTextChannelById("867770758976372766");
         if (event.getMember() == null)
             return;
+
+        if (event.getMember().getUser().getName().toLowerCase().contains("clonex")) {
+            System.out.println(event.getMember().getUser().getName() + "was banned.");
+            event.getGuild().ban(event.getMember(), 7, "Clonex alt. Please stop.").queue();
+            return;
+        }
+
         joinLeaves.sendMessage("Welcome " + event.getMember().getAsMention()
                 + ", to the Oscar Stinson Discord Server <:hello:851462988153618452>").queue();
     }
