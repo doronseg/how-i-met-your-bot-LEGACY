@@ -23,6 +23,7 @@ import me.nerdoron.oscar.commands.useful.suggestions.ServerSuggestCommand;
 import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.FriendsCringe;
 import me.nerdoron.oscar.modules.LeaveJoin;
+import me.nerdoron.oscar.modules.YoutubeNotifications;
 import me.nerdoron.oscar.modules.chain.ChainChannelHandler;
 import me.nerdoron.oscar.modules.chain.ChainEditing;
 import me.nerdoron.oscar.modules.counting.CountingChannelHandler;
@@ -103,6 +104,7 @@ public class Main {
             jda.addEventListener(new CountingChannelHandler());
             jda.addEventListener(new FriendsCringe());
             jda.addEventListener(new TicketCreate());
+            jda.addEventListener(new YoutubeNotifications());
             // jda.addEventListener(new JinxCore());
             // jda.addEventListener(new JinxSystem());
             // ZitchDogTimer.run(jda);
