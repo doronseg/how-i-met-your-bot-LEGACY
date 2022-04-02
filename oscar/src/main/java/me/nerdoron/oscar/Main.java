@@ -27,6 +27,7 @@ import me.nerdoron.oscar.modules.chain.ChainChannelHandler;
 import me.nerdoron.oscar.modules.chain.ChainEditing;
 import me.nerdoron.oscar.modules.counting.CountingChannelHandler;
 import me.nerdoron.oscar.modules.counting.CountingEditing;
+import me.nerdoron.oscar.modules.jinx.JinxCore;
 import me.nerdoron.oscar.ticketsystem.CloseTicketCommand;
 import me.nerdoron.oscar.ticketsystem.TicketCreate;
 import me.nerdoron.oscar.utils.StatusTimer;
@@ -64,7 +65,7 @@ public class Main {
     public static void login(Dotenv dotenv) {
         String token = dotenv.get("TOKEN");
         try {
-            JDA api = JDABuilder.createDefault(token)
+            JDA api = JDABuilder.createLight(token)
                     .enableIntents(GatewayIntent.GUILD_BANS, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS,
                             GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS)
                     .build();
@@ -101,7 +102,8 @@ public class Main {
             jda.addEventListener(new CountingChannelHandler());
             jda.addEventListener(new FriendsCringe());
             jda.addEventListener(new TicketCreate());
-
+            // jda.addEventListener(new JinxCore());
+            // jda.addEventListener(new JinxSystem());
             // ZitchDogTimer.run(jda);
 
         } catch (Exception ex) {

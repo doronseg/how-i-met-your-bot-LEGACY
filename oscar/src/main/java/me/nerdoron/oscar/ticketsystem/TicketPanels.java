@@ -12,27 +12,27 @@ public class TicketPanels {
                                         + "that the Admins need to handle, so punishment appeals, mod reports, and etc.\n\n*Be advised that response times here "
                                         + "will be longer, so please use the other ticket system if it's not important*")
                         .setColor(Global.embedColor)
-                        .setFooter("Oscar Stinson Bot | Developed by nerdoron",
-                                        "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
+                        .setFooter("how i met your bot | Developed by nerdoron",
+                                        "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                         .build();
 
         public static MessageEmbed adminWelcome = new EmbedBuilder().setTitle("📇 Admin Ticket ").setDescription(
                         "Hello, the administration team will be with you as soon as they can. In the meantime. please let us know what you need.\nTo close this ticket, use `*close`")
                         .setColor(Global.embedColor)
-                        .setFooter("Oscar Stinson Bot | Developed by nerdoron",
-                                        "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
+                        .setFooter("how i met your bot | Developed by nerdoron",
+                                        "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                         .build();
         // general ticket
         public static MessageEmbed GeneralTickets = new EmbedBuilder().setTitle("📇 Staff Ticket")
                         .setDescription("Click the button below to contact the staff team.").setColor(Global.embedColor)
-                        .setFooter("Oscar Stinson Bot | Developed by nerdoron",
-                                        "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
+                        .setFooter("how i met your bot | Developed by nerdoron",
+                                        "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                         .build();
 
         public static MessageEmbed generalWelcome = new EmbedBuilder().setTitle("📇 Staff Ticket ").setDescription(
                         "Hello, the staff team will be with you as soon as they can. In the meantime. please let us know what you need.\nTo close this ticket, use `*close`")
                         .setColor(Global.embedColor)
-                        .setFooter("Oscar Stinson Bot | Developed by nerdoron",
-                                        "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
+                        .setFooter("how i met your bott | Developed by nerdoron",
+                                        "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                         .build();
 }

@@ -18,35 +18,40 @@ public class TicketCreate extends ListenerAdapter {
                 EnumSet<Permission> perms = EnumSet.of(Permission.MESSAGE_HISTORY, Permission.MESSAGE_READ,
                                 Permission.MESSAGE_WRITE);
 
-                TextChannel ticketLogs = event.getGuild().getTextChannelById("904000779638157342");
-
                 switch (id) {
-                case "admin":
-                        TextChannel adminTicket = event.getGuild().getCategoryById("850458148723621888")
-                                        .createTextChannel("admin-" + member.getUser().getName().substring(0, 4) + "-"
-                                                        + member.getUser().getDiscriminator())
-                                        .addPermissionOverride(event.getGuild().getPublicRole(), new ArrayList<>(),
-                                                        perms)
-                                        .addPermissionOverride(member, perms, new ArrayList<>()).complete();
-                        event.deferReply().setEphemeral(true)
-                                        .setContent("Created a ticket for you, " + adminTicket.getAsMention()).queue();
-                        adminTicket.sendMessage(member.getAsMention()).queue();
-                        adminTicket.sendMessageEmbeds(TicketPanels.adminWelcome).queue();
+                        case "admin":
+                                TextChannel adminTicket = event.getGuild().getCategoryById("850458148723621888")
+                                                .createTextChannel("admin-" + member.getUser().getName().substring(0, 4)
+                                                                + "-"
+                                                                + member.getUser().getDiscriminator())
+                                                .addPermissionOverride(event.getGuild().getPublicRole(),
+                                                                new ArrayList<>(),
+                                                                perms)
+                                                .addPermissionOverride(member, perms, new ArrayList<>()).complete();
+                                event.deferReply().setEphemeral(true)
+                                                .setContent("Created a ticket for you, " + adminTicket.getAsMention())
+                                                .queue();
+                                adminTicket.sendMessage(member.getAsMention()).queue();
+                                adminTicket.sendMessageEmbeds(TicketPanels.adminWelcome).queue();
 
-                        break;
-                case "general":
-                        TextChannel staffTicket = event.getGuild().getCategoryById("850458148723621888")
-                                        .createTextChannel("ticket-" + member.getUser().getName().substring(0, 4) + "-"
-                                                        + member.getUser().getDiscriminator())
-                                        .addPermissionOverride(event.getGuild().getPublicRole(), new ArrayList<>(),
-                                                        perms)
-                                        .addRolePermissionOverride(850439278717829190L, perms, new ArrayList<>())
-                                        .addPermissionOverride(member, perms, new ArrayList<>()).complete();
-                        event.deferReply().setEphemeral(true)
-                                        .setContent("Created a ticket for you, " + staffTicket.getAsMention()).queue();
-                        staffTicket.sendMessage(member.getAsMention()).queue();
-                        staffTicket.sendMessageEmbeds(TicketPanels.generalWelcome).queue();
-                        break;
+                                break;
+                        case "general":
+                                TextChannel staffTicket = event.getGuild().getCategoryById("850458148723621888")
+                                                .createTextChannel("ticket-"
+                                                                + member.getUser().getName().substring(0, 4) + "-"
+                                                                + member.getUser().getDiscriminator())
+                                                .addPermissionOverride(event.getGuild().getPublicRole(),
+                                                                new ArrayList<>(),
+                                                                perms)
+                                                .addRolePermissionOverride(850439278717829190L, perms,
+                                                                new ArrayList<>())
+                                                .addPermissionOverride(member, perms, new ArrayList<>()).complete();
+                                event.deferReply().setEphemeral(true)
+                                                .setContent("Created a ticket for you, " + staffTicket.getAsMention())
+                                                .queue();
+                                staffTicket.sendMessage(member.getAsMention()).queue();
+                                staffTicket.sendMessageEmbeds(TicketPanels.generalWelcome).queue();
+                                break;
                 }
 
         }

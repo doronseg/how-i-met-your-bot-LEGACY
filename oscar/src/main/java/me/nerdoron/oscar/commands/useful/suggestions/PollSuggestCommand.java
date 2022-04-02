@@ -25,8 +25,8 @@ public class PollSuggestCommand extends Command {
                 .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
                 .setDescription("Getting suggestion...").addField("Author ID", event.getAuthor().getId(), true)
                 .addField("Suggestion ID", "Getting id...", true).setColor(Global.embedColor)
-                .setFooter("Oscar Stinson Bot | Developed by nerdoron",
-                        "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128")
+                .setFooter("how i met your | Developed by nerdoron",
+                        "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                 .build();
 
         serversuggestion.sendMessageEmbeds(suggestNoId).queue((message) -> {
@@ -42,8 +42,8 @@ public class PollSuggestCommand extends Command {
                     .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
                     .setDescription(suggestion).addField("Author ID", event.getAuthor().getId(), true)
                     .addField("Suggestion ID", messageId, true).setColor(Global.embedColor)
-                    .setFooter("Oscar Stinson Bot | Developed by nerdoron",
-                            "https://cdn.discordapp.com/avatars/857223819714625577/502f4031ae28f3033764831361259be2.webp?size=128");
+                    .setFooter("how i met your | Developed by nerdoron",
+                            "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg");
             MessageEmbed finalSuggestion = suggestionYesId.build();
             message.editMessageEmbeds(finalSuggestion).queue();
             message.addReaction("✅").queue();

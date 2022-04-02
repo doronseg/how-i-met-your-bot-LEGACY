@@ -27,6 +27,6 @@ public class LeaveJoin extends ListenerAdapter {
         }
 
         joinLeaves.sendMessage("Welcome " + event.getMember().getAsMention()
-                + ", to the Oscar Stinson Discord Server <:hello:851462988153618452>").queue();
+                + ", to **how i met your discord** <:hello:851462988153618452>").queue();
     }
 }
