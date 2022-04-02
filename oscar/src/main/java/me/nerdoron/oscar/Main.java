@@ -30,6 +30,7 @@ import me.nerdoron.oscar.modules.counting.CountingEditing;
 import me.nerdoron.oscar.modules.jinx.JinxCore;
 import me.nerdoron.oscar.ticketsystem.CloseTicketCommand;
 import me.nerdoron.oscar.ticketsystem.TicketCreate;
+import me.nerdoron.oscar.ticketsystem.sendPanels;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
