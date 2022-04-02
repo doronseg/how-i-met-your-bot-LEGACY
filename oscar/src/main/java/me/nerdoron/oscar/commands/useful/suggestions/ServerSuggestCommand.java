@@ -25,7 +25,7 @@ public class ServerSuggestCommand extends Command {
                 .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
                 .setDescription("Getting suggestion...").addField("Author ID", event.getAuthor().getId(), true)
                 .addField("Suggestion ID", "Getting id...", true).setColor(Global.embedColor)
-                .setFooter("how i met your | Developed by nerdoron",
+                .setFooter("how i met your bot | Developed by nerdoron",
                         "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                 .build();
 
@@ -42,7 +42,7 @@ public class ServerSuggestCommand extends Command {
                     .setAuthor(event.getAuthor().getAsTag() + "'s suggestion", null, event.getAuthor().getAvatarUrl())
                     .setDescription(suggestion).addField("Author ID", event.getAuthor().getId(), true)
                     .addField("Suggestion ID", messageId, true).setColor(Global.embedColor)
-                    .setFooter("how i met your | Developed by nerdoron",
+                    .setFooter("how i met your bot | Developed by nerdoron",
                             "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg");
             MessageEmbed finalSuggestion = suggestionYesId.build();
             message.editMessageEmbeds(finalSuggestion).queue();

@@ -29,7 +29,7 @@ public class UptimeCommand extends Command {
         public void execute(MessageReceivedEvent event, Object[] args, Logger logger, Dotenv dotenv) {
                 MessageEmbed uptime = new EmbedBuilder().setTitle("Uptime")
                                 .setDescription("My uptime is " + getUptime()).setColor(Global.embedColor)
-                                .setFooter("how i met your | Developed by nerdoron",
+                                .setFooter("how i met your bot | Developed by nerdoron",
                                                 "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                                 .build();
                 event.getChannel().sendMessageEmbeds(uptime).queue();

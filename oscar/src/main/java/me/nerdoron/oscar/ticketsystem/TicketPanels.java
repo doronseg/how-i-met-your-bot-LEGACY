@@ -32,7 +32,7 @@ public class TicketPanels {
         public static MessageEmbed generalWelcome = new EmbedBuilder().setTitle("📇 Staff Ticket ").setDescription(
                         "Hello, the staff team will be with you as soon as they can. In the meantime. please let us know what you need.\nTo close this ticket, use `*close`")
                         .setColor(Global.embedColor)
-                        .setFooter("how i met your bott | Developed by nerdoron",
+                        .setFooter("how i met your bot | Developed by nerdoron",
                                         "https://media.discordapp.net/attachments/850432082738937896/901742492347691028/discord_bot_pfp.jpg")
                         .build();
 }
