@@ -1,6 +1,6 @@
-# Oscar Stinson Discord Bot
+# how i met your bot
 
-This repository is for the Oscar Stinson Discord bot from the [Oscar Stinson Discord Server](https://discord.gg/himym). 
+This repository is for how i met your bot from the [how i met your bot](https://discord.gg/himym). 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
