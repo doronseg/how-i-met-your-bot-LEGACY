@@ -9,7 +9,7 @@ public class YoutubeNotifications extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         if (event.getChannel().getId().equals("850436948350992424")) {
             if (event.getAuthor().getId().equals("204255221017214977")) {
-                event.getChannel().sendMessage("@&959910598198579230> watch now! 🔫").queue();
+                event.getChannel().sendMessage("<@&959910598198579230> watch now! 🔫").queue();
             }
         }
     }
