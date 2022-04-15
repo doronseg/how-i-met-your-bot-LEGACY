@@ -1,11 +1,14 @@
 package me.nerdoron.oscar;
 
+import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.nerdoron.oscar.commandManager.CommandManager;
 import me.nerdoron.oscar.commands.fun.EightBall;
+import me.nerdoron.oscar.commands.fun.ReplyCommand;
 import me.nerdoron.oscar.commands.fun.SayCommand;
 import me.nerdoron.oscar.commands.useful.AboutCommand;
 import me.nerdoron.oscar.commands.useful.DonateCommand;
@@ -24,14 +27,14 @@ import me.nerdoron.oscar.commands.useful.suggestions.VideoSuggestCommand;
 import me.nerdoron.oscar.modules.FriendsCringe;
 import me.nerdoron.oscar.modules.LeaveJoin;
 import me.nerdoron.oscar.modules.YoutubeNotifications;
+import me.nerdoron.oscar.modules.ZitchDogTest;
+import me.nerdoron.oscar.modules.ZitchDogTimer;
 import me.nerdoron.oscar.modules.chain.ChainChannelHandler;
 import me.nerdoron.oscar.modules.chain.ChainEditing;
 import me.nerdoron.oscar.modules.counting.CountingChannelHandler;
 import me.nerdoron.oscar.modules.counting.CountingEditing;
-import me.nerdoron.oscar.modules.jinx.JinxCore;
 import me.nerdoron.oscar.ticketsystem.CloseTicketCommand;
 import me.nerdoron.oscar.ticketsystem.TicketCreate;
-import me.nerdoron.oscar.ticketsystem.sendPanels;
 import me.nerdoron.oscar.utils.StatusTimer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -42,6 +45,7 @@ public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private static String prefix = "*";
+    private final static EventWaiter eventWaiter = new EventWaiter();
 
     public static void main(String[] args) {
         try {
@@ -93,7 +97,9 @@ public class Main {
                     .registerCommand(new PollSuggestCommand(), "pollsuggest", "psuggestion", "psuggest")
                     .registerCommand(new ChainSuggestCommand(), "chainsuggest", "csuggestion", "csuggest")
                     .registerCommand(new BotSuggestCommand(), "botsuggest", "bsuggestion", "bsuggest")
-                    .registerCommand(new SayCommand(), "say").registerCommand(new CloseTicketCommand(), "close");
+                    .registerCommand(new SayCommand(), "say").registerCommand(new ReplyCommand(), "reply")
+                    .registerCommand(new CloseTicketCommand(), "close");
+            // .registerCommand(new ZitchDogTest(), "test");
 
             jda.addEventListener(new HelpButtons());
             jda.addEventListener(new AFKMessageEvent());
@@ -107,11 +113,17 @@ public class Main {
             jda.addEventListener(new YoutubeNotifications());
             // jda.addEventListener(new JinxCore());
             // jda.addEventListener(new JinxSystem());
+            // jda.addEventListener(eventWaiter);
+
             // ZitchDogTimer.run(jda);
 
         } catch (Exception ex) {
             logger.error("Exception occured whilst trying to register the commands/events!", ex);
         }
+    }
+
+    public EventWaiter getEventWaiter() {
+        return eventWaiter;
     }
 
 }
