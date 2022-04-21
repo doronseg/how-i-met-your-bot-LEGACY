@@ -13,7 +13,7 @@ public class Sweden extends ListenerAdapter {
                 || (event.getMessage().getContentDisplay().toLowerCase().contains("sweden"))) {
             if (event.getAuthor().isBot())
                 return;
-            if (event.getChannel().getId().equals("850628227835363358"))
+            if (event.getChannel().getId().equals("850628227835363358") || (event.getChannel().getId().equals("850625575856504852"))
                 return;
             event.getChannel().sendMessage("🇸🇪").addFile(new File("sweden.mp4")).queue();
         }
