@@ -10,7 +10,7 @@ public class FriendsCringe extends ListenerAdapter {
         if (event.getMessage().getContentDisplay().toLowerCase().contains("friends")) {
             if (event.getAuthor().isBot())
                 return;
-            if (event.getChannel().getId().equals("850628227835363358"))
+            if (event.getChannel().getId().equals("850628227835363358") || (event.getChannel().getId().equals("850625575856504852")))
                 return;
             event.getChannel().sendMessage("friends? cringe lol").queue();
         }

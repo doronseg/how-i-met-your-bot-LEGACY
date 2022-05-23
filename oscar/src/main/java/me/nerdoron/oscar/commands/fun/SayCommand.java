@@ -14,7 +14,7 @@ public class SayCommand extends Command {
         if (!(event.getMember().hasPermission(Permission.MESSAGE_MANAGE)))
             return;
         if (args.length == 0) {
-            event.getChannel().sendMessage("YRHR you stupid idiot you have to put a message").queue();
+            event.getChannel().sendMessage(event.getAuthor().getName() + " you stupid idiot you have to put a message").queue();
             return;
         }
 
