@@ -69,6 +69,7 @@ public class TicketCreate extends ListenerAdapter {
                                                                 perms)
                                                 .addRolePermissionOverride(850439278717829190L, perms,
                                                                 new ArrayList<>())
+                                                .setTopic("{invites}")
                                                 .addPermissionOverride(member, perms, new ArrayList<>()).complete();
                                 event.deferReply().setEphemeral(true)
                                                 .setContent("Created a ticket for you, "
