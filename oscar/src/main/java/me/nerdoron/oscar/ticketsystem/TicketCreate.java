@@ -52,6 +52,32 @@ public class TicketCreate extends ListenerAdapter {
                                 staffTicket.sendMessage(member.getAsMention()).queue();
                                 staffTicket.sendMessageEmbeds(TicketPanels.generalWelcome).queue();
                                 break;
+                        case "selfpromo":
+                                if (!(event.getMember().getRoles())
+                                                .contains(event.getGuild().getRoleById("850464921040846928"))) {
+                                        event.deferReply().setEphemeral(true).setContent(
+                                                        "Sorry, only members who have reached level 10 are able to submit self promotion links. To check your rank use `=r` in <#850437596487483443>")
+                                                        .queue();
+                                        return;
+                                }
+                                TextChannel selfPromoTicket = event.getGuild().getCategoryById("850458148723621888")
+                                                .createTextChannel("selfpromo-"
+                                                                + member.getUser().getName().substring(0, 4) + "-"
+                                                                + member.getUser().getDiscriminator())
+                                                .addPermissionOverride(event.getGuild().getPublicRole(),
+                                                                new ArrayList<>(),
+                                                                perms)
+                                                .addRolePermissionOverride(850439278717829190L, perms,
+                                                                new ArrayList<>())
+                                                .addPermissionOverride(member, perms, new ArrayList<>()).complete();
+                                event.deferReply().setEphemeral(true)
+                                                .setContent("Created a ticket for you, "
+                                                                + selfPromoTicket.getAsMention())
+                                                .queue();
+                                selfPromoTicket.sendMessage(member.getAsMention()).queue();
+                                selfPromoTicket.sendMessageEmbeds(TicketPanels.selfPromoWelcome).queue();
+
+                                break;
                 }
 
         }

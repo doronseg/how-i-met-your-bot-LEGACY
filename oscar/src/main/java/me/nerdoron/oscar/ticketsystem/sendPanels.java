@@ -17,5 +17,10 @@ public class sendPanels extends Command {
         event.getChannel().sendMessageEmbeds(TicketPanels.GeneralTickets)
                 .setActionRow(Button.secondary("general", "📇 Contact the Staff Team"))
                 .queue();
+
+        event.getChannel().sendMessageEmbeds(TicketPanels.selfPromoTicket)
+                .setActionRow(Button.secondary("selfpromo", "📇 Submit a Self Promotion link"))
+                .queue();
     }
+
 }

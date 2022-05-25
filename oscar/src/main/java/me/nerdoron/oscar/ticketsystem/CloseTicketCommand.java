@@ -11,7 +11,8 @@ public class CloseTicketCommand extends Command {
     @Override
     public void execute(MessageReceivedEvent event, Object[] args, Logger logger, Dotenv dotenv) {
         if (!(event.getChannel().getName().startsWith("ticket-"))
-                && !(event.getChannel().getName().startsWith("admin-"))) {
+                && !(event.getChannel().getName().startsWith("admin-"))
+                && !(event.getChannel().getName().startsWith("selfpromo"))) {
             event.getChannel().sendMessage("This isn't a ticket channel!").queue();
             return;
         }
